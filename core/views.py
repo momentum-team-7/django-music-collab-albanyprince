@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Album
+from .models import Album, Artist
 
 # Create your views here.
 def index(request):
-    artists = Artist.objects.name()
-    return render(request, 'index.html', {'artists:' artists})
+    artists = Artist.objects.all()
+    return render(request, 'index.html', {'artists': artists})
 
 def album_list(request):
     albums = Album.objects.all()

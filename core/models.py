@@ -16,7 +16,7 @@ class Artist(models.Model):
 
 class Album(models.Model):
     title = models.CharField(max_length=280)
-    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE, blank=True, null=True, related_name='albums')
     # below True makes field optional
     release_year = models.IntegerField(blank = True, null=True)    
  #  ForeignKey relationship/ one-to-many relationship   
