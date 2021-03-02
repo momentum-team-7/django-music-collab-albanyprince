@@ -1,0 +1,6 @@
+{% extends 'core/index.html' %}
+
+    {% for artist in artists %}
+        {{ artist.name }}
+        {{ artist.label }}
+    {% endfor %}
