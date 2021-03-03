@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h2>{{artist}}</h2>
+        {{ artist.label }}
+ <details>
+     <summary>ALBUMS</summary>
+     {% for album in artist.albums.all %}
+     
+     <li>{{ album }}</li>
+     
+     {% endfor %}
+ </details>
+
+
+
+{% endblock content %}    

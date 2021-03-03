@@ -21,8 +21,9 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
-    path('artist/', views.artist_detail, name='artist_detail'),
-    path('album/', views.album_list, name='album_list'),
+    path('artist/<int:pk>/', views.artist_detail, name='artist-detail'),
+    path('album/', views.album_list, name='album-list'),
+    path('albums/<int:pk>/', views.album_detail, name="album-detail"),
 
 ]
 
