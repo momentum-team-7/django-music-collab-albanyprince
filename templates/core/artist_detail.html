@@ -4,16 +4,22 @@
 
 
 <h2>{{artist}}</h2>
-        {{ artist.label }}
+
+    {% if artist.artist_photo %}
+    <img src="{{ artist.artist_photo.url }}">
+    {% endif %}
+        
  <details>
      <summary>ALBUMS</summary>
      {% for album in artist.albums.all %}
      
      <li>{{ album }}</li>
-     
+     <button><a href="{% url 'edit-album' pk=album.pk %}">EDIT ALBUM</a></button>
      {% endfor %}
+     
+
  </details>
 
-
+ {{ artist.label }}
 
 {% endblock content %}    

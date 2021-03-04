@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="form">
+    <button class="add"><a href="{% url 'add-artist' %}">+ ARTIST</a></button>
+    <button><a href="{% url 'add-album' %}">+ ALBUM</a></button>
+</div>
         {% for artist in artists %}
-    <h2><a href="{% url 'artist-detail' artist.pk %}">{{artist}}</a></h2>
+       
+    <h2><a href="{% url 'artist-detail' artist.pk %}">{{artist}}</a></h2><button class="delete"><a href="{% url 'delete-artist' pk=artist.pk%}">DELETE</a><button><a href="{% url 'edit-artist' pk=artist.pk %}">EDIT ARTIST</a></button>
+    </button>
+    
+
         {% endfor %}
+       
 {% endblock %}
   

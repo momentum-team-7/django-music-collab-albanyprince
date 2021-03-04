@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from core import views
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,7 +25,11 @@ urlpatterns = [
     path('artist/<int:pk>/', views.artist_detail, name='artist-detail'),
     path('album/', views.album_list, name='album-list'),
     path('albums/<int:pk>/', views.album_detail, name="album-detail"),
-
+    path('artist/new', views.add_artist, name="add-artist"),
+    path('album/new', views.add_album, name="add-album"),
+    path('artist/<int:pk>/edit', views.edit_artist, name="edit-artist"),
+    path('album/<int:pk>/edit', views.edit_album, name="edit-album"),
+    path('artist/<int:pk>/delete', views.delete_artist, name="delete-artist"),
 ]
 
 if settings.DEBUG:
@@ -35,3 +40,5 @@ if settings.DEBUG:
         # For django versions before 2.0:
         # url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+if settings.DEBUG: # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

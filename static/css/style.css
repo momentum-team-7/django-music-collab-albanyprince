@@ -1,6 +1,6 @@
 * {
     background-color: #FCA311;
-    padding: 10px;
+    padding: 20px;
 }
 
 
@@ -8,21 +8,47 @@ h1 {
     color: #FFFFFF;
     font-family: 'Bebas Neue', cursive;
     font-size: 70px;
+    padding: 20px;
 }
 
-h2{
-    color: #FFFFFF;
+h2 {
+    color: white;
     font-family: 'Bebas Neue', cursive;
     font-size: 50px;
+    padding: 20px;
 }
 
 details {
-    color: #E5E5E5;
-    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
     font-size: 40px;
+    padding: 20px;
 }
+
+form {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+img { 
+    max-width: 400px;
+    max-height: 400px;
+    border: 10px solid white;
+    padding: 20px;
+  }
+
+/* .icon {
+    max-width: 100px;
+    max-height: 100px;
+    border: 10px solid white;
+    padding: 20px;
+}   */
 
 ul, li {
     list-style-type: none;
 }
 
+button{
+    border-radius: 20px;
+    border: solid;
+}
